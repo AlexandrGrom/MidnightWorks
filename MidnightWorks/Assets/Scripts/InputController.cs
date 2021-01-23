@@ -5,12 +5,17 @@ public class InputController : MonoBehaviour
     [SerializeField] private float smoothTime;
     [SerializeField] private float leftRightMaxPosition;
     [SerializeField] private float movingSpeed;
+    [SerializeField] private bool isMoving;
 
     private Vector3 velocity;
+    
 
     private void Update()
     {
-        transform.Translate(Vector3.forward * Time.deltaTime * movingSpeed);
+        if (isMoving)
+        {
+            transform.Translate(Vector3.forward * Time.deltaTime * movingSpeed);
+        }
 
         if (Input.GetMouseButton(0))
         {

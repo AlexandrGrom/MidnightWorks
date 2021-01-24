@@ -9,6 +9,7 @@ public class CoinRotation : MonoBehaviour
     [SerializeField] private float floatingRange = 1;
     [SerializeField] private float groundDistance = 0.1f;
     [SerializeField] private float offset = 0.1f;
+    [SerializeField] private bool isPlayer = false;
 
     private void Awake()
     {
@@ -25,8 +26,11 @@ public class CoinRotation : MonoBehaviour
     {
         if (state == GameState.Lose)
         {
-            transform.DORotate(Vector3.right * 90, 0.4f).SetEase(Ease.OutBounce);
-            transform.DOLocalMove(Vector3.up * 0.1f , 0.4f).SetEase(Ease.OutBounce);
+            if (isPlayer)
+            {
+                 transform.DORotate(Vector3.right * 90, 0.4f).SetEase(Ease.OutBounce);
+                 transform.DOLocalMove(Vector3.up * 0.1f , 0.4f).SetEase(Ease.OutBounce);
+            }
         }
     }
 

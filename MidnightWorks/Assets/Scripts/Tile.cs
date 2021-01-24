@@ -16,20 +16,13 @@ public class Tile : MonoBehaviour
         {
             obstacleHolder = ObstacleManager.PlaceObstacle(transform);
             obstacleHolder.EnableObstacles();
+            coinHolder?.DisableCoins();
         }
         else
-        {
-            obstacleHolder?.DisableObstacles();
-        }
-
-        if (i % 2 == 0)
         {
             coinHolder = CoinManager.PlaceCoin(transform);
             coinHolder.EnableCoins();
-        }
-        else
-        {
-            coinHolder?.DisableCoins();
+            obstacleHolder?.DisableObstacles();
         }
     }
 }

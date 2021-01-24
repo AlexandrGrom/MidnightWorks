@@ -9203,6 +9203,7 @@ MonoBehaviour:
   floatingRange: 0.15
   groundDistance: 0.15
   offset: 0
+  isPlayer: 1
 --- !u!1001 &3049349787318263735
 PrefabInstance:
   m_ObjectHideFlags: 0

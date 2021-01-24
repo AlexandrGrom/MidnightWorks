@@ -25,6 +25,16 @@ public class RoadeGenerator : MonoBehaviour
     private void GetNextTile()
     {
         newxTile.transform.position = new Vector3(0, 0, newxTile.Lenght * (tiles.Length+counter-1));
+
+        if (counter % 2 == 1)
+        {
+            newxTile.GetPattern();
+        }
+        else
+        {
+            newxTile.DisableObstacles();
+        }
+
         newxTile = tiles[counter % tiles.Length];
         counter++;
     }

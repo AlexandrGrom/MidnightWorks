@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class MainMenu : ScreenElement
 {
-    [SerializeField] private Button startGame;
+    [SerializeField] private EventTrigger startGame;
 
     private void Awake()
     {
-        startGame.onClick.AddListener(()=>GameStateManager.CurrentState = GameState.Game);
+        EventTrigger.Entry entry = new EventTrigger.Entry();
+        entry.eventID = EventTriggerType.PointerDown;
+
+        entry.callback.AddListener((data) => GameStateManager.CurrentState = GameState.Game);
+        startGame.triggers.Add(entry);
     }
 }

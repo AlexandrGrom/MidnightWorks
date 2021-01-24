@@ -5,14 +5,11 @@ using DG.Tweening;
 
 public class Obstacle : MonoBehaviour
 {
-    [SerializeField] private int damage = 1;
-
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out LifeControllre lifeControllre))
         {
-            lifeControllre.TakeDamage(damage);
+            lifeControllre.TakeDamage();
             ShakeCamera();
 
             ParticlePlayer.PlayParticle.Invoke(transform.position);

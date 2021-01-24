@@ -3,14 +3,15 @@
 public class RoadeGenerator : MonoBehaviour
 {
     [SerializeField] private Transform player;
-    [SerializeField] private Tile[] tiles;
     [SerializeField] private float tileStep;
 
+    private Tile[] tiles;
     private Tile newxTile;
     private int counter=1;
 
     private void Awake()
     {
+        tiles = GetComponentsInChildren<Tile>();
         newxTile = tiles[0];
     }
 
@@ -26,16 +27,12 @@ public class RoadeGenerator : MonoBehaviour
     {
         newxTile.transform.position = new Vector3(0, 0, newxTile.Lenght * (tiles.Length+counter-1));
 
-        if (counter % 2 == 1)
-        {
-            newxTile.GetPattern();
-        }
-        else
-        {
-            newxTile.DisableObstacles();
-        }
+        newxTile.GetPattern(counter);
+
+
 
         newxTile = tiles[counter % tiles.Length];
         counter++;
     }
+
 }

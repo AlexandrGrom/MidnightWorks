@@ -13,12 +13,12 @@ public class InputController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         if (GameStateManager.CurrentState == GameState.Game)
         {
             if (isMoving)
             {
                 rigidBody.velocity = Vector3.forward * movingSpeed;
+                ScoreManager.CurrentScore = Mathf.RoundToInt(transform.position.z);
             }
             if (Input.GetMouseButton(0))
             {
@@ -26,6 +26,10 @@ public class InputController : MonoBehaviour
                 Vector3 targetPosition = new Vector3(inputP * leftRightMaxPosition, transform.position.y, transform.position.z);
                 transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime * Time.fixedDeltaTime);
             }
+        }
+        else
+        {
+            rigidBody.velocity = Vector3.zero;
         }
     }
 }

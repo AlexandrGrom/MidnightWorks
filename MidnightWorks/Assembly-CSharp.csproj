@@ -63,23 +63,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\CoinFollower.cs" />
-    <Compile Include="Assets\Scripts\CoinRotation.cs" />
-    <Compile Include="Assets\Scripts\Fan.cs" />
+    <Compile Include="Assets\Scripts\Coins\CoinHolder.cs" />
+    <Compile Include="Assets\Scripts\Coins\CoinHolder1.cs" />
+    <Compile Include="Assets\Scripts\Coins\CoinManager.cs" />
+    <Compile Include="Assets\Scripts\Coins\Coins.cs" />
     <Compile Include="Assets\Scripts\GameStateManager.cs" />
-    <Compile Include="Assets\Scripts\InputController.cs" />
-    <Compile Include="Assets\Scripts\LifeControllre.cs" />
-    <Compile Include="Assets\Scripts\MovingObstacle.cs" />
+    <Compile Include="Assets\Scripts\Obsltacle\Fan.cs" />
+    <Compile Include="Assets\Scripts\Obsltacle\MovingObstacle.cs" />
     <Compile Include="Assets\Scripts\Obsltacle\Obstacle.cs" />
-    <Compile Include="Assets\Scripts\ObstacleHolder.cs" />
-    <Compile Include="Assets\Scripts\ObstacleManager.cs" />
+    <Compile Include="Assets\Scripts\Obsltacle\ObstacleHolder.cs" />
+    <Compile Include="Assets\Scripts\Obsltacle\ObstacleManager.cs" />
     <Compile Include="Assets\Scripts\ParticlePlayer.cs" />
+    <Compile Include="Assets\Scripts\Player\CoinFollower.cs" />
+    <Compile Include="Assets\Scripts\Player\CoinRotation.cs" />
+    <Compile Include="Assets\Scripts\Player\InputController.cs" />
+    <Compile Include="Assets\Scripts\Player\LifeControllre.cs" />
+    <Compile Include="Assets\Scripts\Player\TargetFollower.cs" />
     <Compile Include="Assets\Scripts\RoadeGenerator.cs" />
-    <Compile Include="Assets\Scripts\TargetFollower.cs" />
+    <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
     <Compile Include="Assets\Scripts\UI\Game.cs" />
     <Compile Include="Assets\Scripts\UI\Lose.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\UI\Nominal.cs" />
     <Compile Include="Assets\Scripts\UI\ScreenElement.cs" />
     <Compile Include="Assets\Scripts\UI\UIManager.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

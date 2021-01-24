@@ -36,7 +36,10 @@ public class CoinRotation : MonoBehaviour
 
     void Update()
     {
-        if (GameStateManager.CurrentState == GameState.Lose) return;
+        if (GameStateManager.CurrentState == GameState.Lose && isPlayer) 
+        {
+            return;
+        }
 
         transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
         transform.localPosition = new Vector3(transform.localPosition.x,
